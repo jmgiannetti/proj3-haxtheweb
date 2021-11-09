@@ -1,17 +1,17 @@
 import { html } from 'lit';
 
-import '../rename-me.js';
+import '../mark-the-words.js';
 
 export default {
   title: 'Rename me',
-  component: 'rename-me',
+  component: 'mark-the-words',
   argTypes: {
     need: { control: 'text' },
   },
 };
 
 function Template({ need = 'rename', slot }) {
-  return html` <rename-me need="${need}"> ${slot} </rename-me> `;
+  return html` <mark-the-words need="${need}"> ${slot} </mark-the-words> `;
 }
 export const Card = Template.bind({});
 

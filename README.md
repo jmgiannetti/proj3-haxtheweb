@@ -16,7 +16,7 @@ yarn install
 yarn start
 # requires node 10 & npm 6 or higher
 ```
-Navigate to the HAX page to see it in context. Make sure to change `rename-me` in ALL parts of the repo to your project name.
+Navigate to the HAX page to see it in context. Make sure to change `mark-the-words` in ALL parts of the repo to your project name.
 ## Scripts
 
 - `start` runs your app for development, reloading on file changes

@@ -79,6 +79,6 @@ export class MarkTheWords extends LitElement {
    * haxProperties integration via file reference
    */
   static get haxProperties() {
-    return new URL(`../lib/rename-me.haxProperties.json`, import.meta.url).href;
+    return new URL(`../lib/mark-the-words.haxProperties.json`, import.meta.url).href;
   }
 }
