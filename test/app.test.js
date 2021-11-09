@@ -1,12 +1,12 @@
 import { html } from 'lit';
 import { fixture, expect } from '@open-wc/testing';
 
-import '../rename-me.js';
+import '../mark-the-words.js';
 
-describe('RenameMe', () => {
+describe('MarkTheWords', () => {
   let element;
   beforeEach(async () => {
-    element = await fixture(html`<rename-me></rename-me>`);
+    element = await fixture(html`<mark-the-words></mark-the-words>`);
   });
 
   it('renders a h1', () => {

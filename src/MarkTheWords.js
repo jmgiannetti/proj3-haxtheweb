@@ -1,24 +1,26 @@
 // dependencies / things imported
 import { LitElement, html, css } from 'lit';
+import { LitElement, css, html } from "https://unpkg.com/lit@2.0.2/index.js?module";
 
 // EXPORT (so make available to other documents that reference this file) a class, that extends LitElement
 // which has the magic life-cycles and developer experience below added
-export class RenameMe extends LitElement {
+export class MarkTheWords extends LitElement {
   // a convention I enjoy so you can change the tag name in 1 place
   static get tag() {
-    return 'rename-me';
+    return 'mark-the-words';
   }
 
   // HTMLElement life-cycle, built in; use this for setting defaults
   constructor() {
     super();
-    this.need = 'all need to succeed';
   }
 
   // properties that you wish to use as data in HTML, CSS, and the updated life-cycle
   static get properties() {
     return {
-      need: { type: String, reflect: true },
+      wordList: { type: Array },
+      answers: { type: String, reflect: true },
+      correctAnswers: { type: Array }
     };
   }
 
@@ -26,9 +28,7 @@ export class RenameMe extends LitElement {
   // this allows you to react to variables changing and use javascript to perform logic
   updated(changedProperties) {
     changedProperties.forEach((oldValue, propName) => {
-      if (propName === 'need' && this[propName] === 'joy') {
-        this.classList.add('joyful');
-      }
+      
     });
   }
 
@@ -58,10 +58,6 @@ export class RenameMe extends LitElement {
       :host {
         display: block;
       }
-      :host([need='joy']) {
-        color: yellow;
-        background-color: black;
-      }
     `;
   }
 
@@ -69,7 +65,7 @@ export class RenameMe extends LitElement {
   render() {
     return html`
       <h1>Make me awesome</h1>
-      <p>Build the future we ${this.need}.</p>
+      <p>Build the future we.</p>
       <slot></slot>
     `;
   }
@@ -80,6 +76,6 @@ export class RenameMe extends LitElement {
    * haxProperties integration via file reference
    */
   static get haxProperties() {
-    return new URL(`../lib/rename-me.haxProperties.json`, import.meta.url).href;
+    return new URL(`../lib/mark-the-words.haxProperties.json`, import.meta.url).href;
   }
 }

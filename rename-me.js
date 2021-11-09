@@ -1,3 +1,3 @@
-import { RenameMe } from './src/RenameMe.js';
+import { MarkTheWords } from './src/MarkTheWords.js';
 
-customElements.define(RenameMe.tag, RenameMe);
+customElements.define(MarkTheWords.tag, MarkTheWords);
