@@ -1,12 +1,13 @@
 // dependencies / things imported
 import { LitElement, html, css } from 'lit';
+import { LitElement, css, html } from "https://unpkg.com/lit@2.0.2/index.js?module";
 
 // EXPORT (so make available to other documents that reference this file) a class, that extends LitElement
 // which has the magic life-cycles and developer experience below added
-export class RenameMe extends LitElement {
+export class MarkTheWords extends LitElement {
   // a convention I enjoy so you can change the tag name in 1 place
   static get tag() {
-    return 'rename-me';
+    return 'mark-the-words';
   }
 
   // HTMLElement life-cycle, built in; use this for setting defaults
@@ -18,7 +19,9 @@ export class RenameMe extends LitElement {
   // properties that you wish to use as data in HTML, CSS, and the updated life-cycle
   static get properties() {
     return {
-      need: { type: String, reflect: true },
+      wordList: { type: Array },
+      answers: { type: String, reflect: true },
+      correctAnswers: { type: Array }
     };
   }
 
@@ -57,10 +60,6 @@ export class RenameMe extends LitElement {
     return css`
       :host {
         display: block;
-      }
-      :host([need='joy']) {
-        color: yellow;
-        background-color: black;
       }
     `;
   }
