@@ -13,7 +13,6 @@ export class MarkTheWords extends LitElement {
   // HTMLElement life-cycle, built in; use this for setting defaults
   constructor() {
     super();
-    this.need = 'all need to succeed';
   }
 
   // properties that you wish to use as data in HTML, CSS, and the updated life-cycle
@@ -29,9 +28,7 @@ export class MarkTheWords extends LitElement {
   // this allows you to react to variables changing and use javascript to perform logic
   updated(changedProperties) {
     changedProperties.forEach((oldValue, propName) => {
-      if (propName === 'need' && this[propName] === 'joy') {
-        this.classList.add('joyful');
-      }
+      
     });
   }
 
@@ -68,7 +65,7 @@ export class MarkTheWords extends LitElement {
   render() {
     return html`
       <h1>Make me awesome</h1>
-      <p>Build the future we ${this.need}.</p>
+      <p>Build the future we.</p>
       <slot></slot>
     `;
   }
