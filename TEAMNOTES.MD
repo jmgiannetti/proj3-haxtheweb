@@ -24,9 +24,8 @@ These are dedicated status check-ins as this is a multi-week project
 - Hover state, clicked state, check state (unineractable when checking answers)
 - Prompt, body, and correct answers will need to be mapped to HAX / storybook.
 ### Check-in 2
-- 
-
-- 
+- The project is currently working locally but has not been pushed to the main repo yet.
+- Visually it is lacking, but overall we are on track and essentially almost done with the functionality portion.
 ### Check-in 3
 - 
 - 
