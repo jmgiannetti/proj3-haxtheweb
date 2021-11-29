@@ -27,8 +27,8 @@ These are dedicated status check-ins as this is a multi-week project
 - The project is currently working locally but has not been pushed to the main repo yet.
 - Visually it is lacking, but overall we are on track and essentially almost done with the functionality portion.
 ### Check-in 3
-- 
-- 
+- Project visuals in progress on local branch
+- Need to refine and upgrade certain functionality (scoring, retry, editability, ect.)
 ### Check-in 4
 - 
 - 
