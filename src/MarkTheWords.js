@@ -12,14 +12,11 @@ export class MarkTheWords extends LitElement {
   // HTMLElement life-cycle, built in; use this for setting defaults
   constructor() {
     super();
-    this.selectedWord = '';
-    this.wordList = [];
     this.answers = "";
     this.correctAnswers = [];
     //parse text
-    this.wordArray = this.pgh.split(/\s+/g);
-    this.pgh = "";
-
+    this.wordList = this.innerText.split(/\s+/g);
+    this.innerText = "";
   }
 
   // properties that you wish to use as data in HTML, CSS, and the updated life-cycle
@@ -35,7 +32,7 @@ export class MarkTheWords extends LitElement {
   // this allows you to react to variables changing and use javascript to perform logic
   updated(changedProperties) {
     changedProperties.forEach((oldValue, propName) => {
-      if (propName === "wordArray") {
+      if (propName === "wordList") {
         this.rebuildContents(this[propName]);
       }
       if (propName === "answers" && this[propName]) {
@@ -52,7 +49,7 @@ export class MarkTheWords extends LitElement {
       let span = document.createElement("span");
       span.innerText = word;
       span.setAttribute("tabindex", "-1");
-      span.addEventListener("click", this.clickWord.bind(this));
+      span.addEventListener("click", this.selectWord.bind(this));
 
       this.shadowRoot.querySelector("#textArea").appendChild(span);
     });
@@ -106,7 +103,7 @@ export class MarkTheWords extends LitElement {
       outline: 2px solid blue;
     }
     span[data-status="correct"] {
-      outline: 2px solid green;
+      outline: 2px solid purple;
     }
     span[data-status="correct"]::after {
       content: "+1";
@@ -114,7 +111,7 @@ export class MarkTheWords extends LitElement {
       color: green;
       font-weight: bold;
       border-radius: 50%;
-      border: 2px solid green;
+      border: 2px solid purple;
       padding: 4px;
       margin-left: 8px;
       line-height: 14px;
@@ -167,11 +164,12 @@ export class MarkTheWords extends LitElement {
   render() {
     return html`
       <div id="textArea">
+      </div>
         <div class = "buttons">
           <button @click="${this.checkAnswer}">Check</button>
       </div>
       <div class="correct">
-        <h1>Correct Answers (in .map)</h1>
+        <h1>Correct Answers</h1>
         <ul> ${this.correctAnswers.map((item, i) => html`<li data-index="${i}">${item}</li>`)}
     </ul>
     </div>
