@@ -151,7 +151,10 @@ export class MarkTheWords extends LitElement {
     console.log(selected);
     for (var i = 0; i < selected.length; i++) {
       const el = selected[i];
-      if (this.correctAnswers.includes(el.innerText)) {
+      console.log(this.correctAnswers);
+      console.log(el.innerText);
+      console.log(this.correctAnswers.includes(el.innerText));
+      if (this.correctAnswers.includes(el.innerText.replace(/[&#^,+()$~%.":*?<>{}]/g, ''))) {
         el.setAttribute("data-status", "correct");
       }
       else {
