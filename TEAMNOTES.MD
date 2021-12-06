@@ -30,5 +30,7 @@ These are dedicated status check-ins as this is a multi-week project
 - Project visuals in progress on local branch
 - Need to refine and upgrade certain functionality (scoring, retry, editability, ect.)
 ### Check-in 4
-- 
-- 
+- Working code has been pushed to the group repo
+- Implemented functionality to exclude unwanted characters in words like periods, commas, etc.
+- Currently working on the following functionalities: button to refresh; scoring; something to restrict checking more words after first attempt
+- Need to work on aesthetics/visuals, prompt
